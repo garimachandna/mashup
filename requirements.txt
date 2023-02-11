@@ -1,1 +1,1 @@
-youtubesearch
+youtube-search-python==1.6.6
