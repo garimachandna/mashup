@@ -158,8 +158,8 @@ st.title('Mashup')
 
 with st.form(key= 'mashup form'):
     singer= st.text_input('Singer Name')
-    noofvideos= st.text_input('Number of videos')
-    duration= st.text_input('Duration of each video')
+    noofvideos= int(st.text_input('Number of videos'))
+    duration= int(st.text_input('Duration of each video'))
     mailid= st.text_input('Email id')
 
     button= st.form_submit_button('Submit')
