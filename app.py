@@ -113,8 +113,7 @@ with st.form(key= 'mashup form'):
         check(mailid)    
 
         
-        dirname = os.path.dirname(__file__)
-        filename = os.path.join(dirname, '10207070.py')
+        filename = os.path.join("102017070.py")
 
         
         subprocess.call(f'python3 {filename} {singer} {noofvideos} {duration} "m.mp3"')
