@@ -168,11 +168,11 @@ with st.form(key= 'mashup form'):
         if not (( singer.startswith("'") and singer.endswith("'") ) or ( singer.startswith('"') and singer.endswith('"') )):
             st.error('singer name must be enclosed in single/double quotes')
             sys.exit() 
-        if(int(noofvideos) <10) :
+        if(noofvideos <10) :
             st.error('No of videos should be greater than or equal to 10')
             sys.exit() 
 
-        if(int(duration) <20) :
+        if(duration <20) :
             st.error('Duration of each audio should be greater than or equal to 20')
             sys.exit() 
 
