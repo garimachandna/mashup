@@ -15,7 +15,7 @@ import os
 import glob
 import sys
 from youtubesearchpython import *
-import youtube as yt
+from pytube import YouTube 
 import os
 import moviepy.editor as mp
 from moviepy.editor import concatenate_audioclips, AudioFileClip
@@ -39,7 +39,13 @@ def getsongs(links, n):
     c=0
     while c < min(n, len(links)):
         try:
-            yt.single_video(links[c], 'videos/')
+            yt = YouTube(links[c]) 
+            mp4files = yt.filter('mp4') 
+        
+            # get the video with the extension and
+            # resolution passed in the get() function 
+            d_video = yt.get(mp4files[-1].extension,mp4files[-1].resolution) 
+            d_video.download('videos/')
             c=c+1
         except Exception as e:
             print(e)
