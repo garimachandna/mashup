@@ -158,8 +158,8 @@ st.title('Mashup')
 
 with st.form(key= 'mashup form'):
     singer= st.text_input('Singer Name')
-    noofvideos= int(st.text_input('Number of videos'))
-    duration= int(st.text_input('Duration of each video'))
+    noofvideos= st.text_input('Number of videos')
+    duration= st.text_input('Duration of each video')
     mailid= st.text_input('Email id')
 
     button= st.form_submit_button('Submit')
@@ -168,11 +168,11 @@ with st.form(key= 'mashup form'):
         if not (( singer.startswith("'") and singer.endswith("'") ) or ( singer.startswith('"') and singer.endswith('"') )):
             st.error('singer name must be enclosed in single/double quotes')
             sys.exit() 
-        if(noofvideos <10) :
+        if(int(noofvideos) <10) :
             st.error('No of videos should be greater than or equal to 10')
             sys.exit() 
 
-        if(duration <20) :
+        if(int(duration) <20) :
             st.error('Duration of each audio should be greater than or equal to 20')
             sys.exit() 
 
@@ -196,8 +196,8 @@ with st.form(key= 'mashup form'):
 
 
         links= searchsongs(singer= singer)
-        getsongs(links= links, n= noofvideos)
-        getaudio(duration)
+        getsongs(links= links, n= int(noofvideos))
+        getaudio(int(duration))
         mergeaudios('m.mp3')
         
         sendmail(mail= mailid, result= 'm.mp3')
