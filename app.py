@@ -40,12 +40,8 @@ def getsongs(links, n):
     while c < min(n, len(links)):
         try:
             yt = YouTube(links[c]) 
-            mp4files = yt.filter('mp4') 
-        
-            # get the video with the extension and
-            # resolution passed in the get() function 
-            d_video = yt.get(mp4files[-1].extension,mp4files[-1].resolution) 
-            d_video.download('videos/')
+            yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution')[-1].download('videos/')
+
             c=c+1
         except Exception as e:
             print(e)
