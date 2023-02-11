@@ -7,7 +7,9 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 import re
- 
+import os
+
+
 # Make a regular expression
 # for validating an Email
 regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
@@ -111,7 +113,11 @@ with st.form(key= 'mashup form'):
         check(mailid)    
 
         
-        subprocess.call(f'python3 102017070.py {singer} {noofvideos} {duration} "m.mp3"')
+        dirname = os.path.dirname(__file__)
+        filename = os.path.join(dirname, '10207070.py')
+
+        
+        subprocess.call(f'python3 {filename} {singer} {noofvideos} {duration} "m.mp3"')
         sendmail(mail= mailid, result= 'm.mp3')
         st.success('Mail sent successfully')
 
