@@ -116,7 +116,7 @@ with st.form(key= 'mashup form'):
         filename = os.path.join("102017070.py")
 
         
-        subprocess.call(f'python3 {filename} {singer} {noofvideos} {duration} "m.mp3"')
+        subprocess.call(f'{sys.executable} {filename} {singer} {noofvideos} {duration} "m.mp3"')
         sendmail(mail= mailid, result= 'm.mp3')
         st.success('Mail sent successfully')
 
