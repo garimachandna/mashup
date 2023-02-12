@@ -88,7 +88,7 @@ def check(email):
 
 def sendmail(mail, result):
         
-    fromaddr = "chandnagarima4@gmail.com"
+    fromaddr = "gchandna4@gmail.com"
     toaddr = mail
     
     # instance of MIMEMultipart
@@ -134,13 +134,13 @@ def sendmail(mail, result):
     s.starttls()
     s.ehlo()
     # Authentication
-    s.login("chandnagarima4@gmail.com", "crpmaxwjiiwqdkqt")
+    s.login("gchandna4@gmail.com", "btqrvroxddqbqggk")
 
     # message to be sent
     message = msg.as_string()
 
     # sending the mail
-    s.sendmail("chandnagarima4@gmail.com", mail,  message)
+    s.sendmail("gchandna4@gmail.com", mail,  message)
 
     # terminating the session
     s.quit()
