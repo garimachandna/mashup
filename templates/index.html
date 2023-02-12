@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mashup : by Garima Chandna</title>
+</head>
+<body>
+    <title>Mashup</title>
+    <h2><strong> Mashup</strong></h2>
+    <form action="/my_link" method="post" enctype="multipart/form-data"> 
+        <label for= "singer" > Singer Name</label>
+        <input type="text" id= "singer" name="sname" required><br><br>
+        <label for= "video"> # of videos </label>
+        <input type="text" id= "video" name="video" required><br><br>
+        <label for= "duration"> Duration of each video </label>
+        <input type="text" id= "duration" name="duration" required><br><br>
+        <label for= "mail"> Email Id</label>
+        <input type="email" id= "mail" name="mail" oninvalid="alert('Please enter a valid email');"><br><br>
+        <input type="submit" id="submit"><br><br>
+    </form>
+</body>
+</html>
