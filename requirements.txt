@@ -10,7 +10,6 @@ imageio==2.25.0
 imageio-ffmpeg==0.4.8
 importlib-metadata==6.0.0
 importlib-resources==5.10.2
-ipykernel==6.21.1
 ipython==8.9.0
 itsdangerous==2.1.2
 jedi==0.18.2
